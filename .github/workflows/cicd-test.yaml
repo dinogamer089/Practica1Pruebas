@@ -40,13 +40,16 @@ jobs:
       run: |
         python -m pytest -v --cov=. --cov-report=html --html=report.html
     - name: Build Clase
+      working-directory: Practica1
       run: |
         mkdir build
         cp calculadora.py build/
     - name: Build Reporte COV
+      working-directory: Practica1
       run: |
         cp -r htmlcov build/
     - name: Build Reporte HTML
+      working-directory: Practica1
       run: |
         cp -r assets build/
         cp -r report.html build/
